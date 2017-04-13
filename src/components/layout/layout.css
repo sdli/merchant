@@ -1,0 +1,27 @@
+.logo{
+  height: 31px;
+  background: #ffffff;
+  border-radius: 6px;
+  float: left;
+  font-size: 18px;
+}
+.header{
+    background:#ffffff;
+    padding: 0 50px;
+    height: 64px;
+    line-height: 64px;
+}
+.layout{
+    background-color: #ffffff
+}
+.content{
+   padding: 16px 32px;
+   background: #f0f0f0;
+   overflow: hidden;
+}
+
+@media screen and (max-width: 480px){
+   .content{
+        padding: 16px 0; 
+    }
+}
