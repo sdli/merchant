@@ -121,10 +121,16 @@
     min-height: 500px;
 }
 .flex70{
-    flex: 0 0 70%;
+    flex: 0 0 60%;
 }
 .flex30{
     flex: 0 0 30%;
+}
+.flexOne{
+    flex: 1;
+}
+.flexTwo{
+    flex: 2;
 }
 .leftBorder{
     border-left: 1px solid #f0f0f0;

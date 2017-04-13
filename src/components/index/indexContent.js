@@ -115,11 +115,11 @@ const Content = function(){
                    <Datas />
                </div>
                <div className={styles.contentCellFlex}>
-                    <div className={styles.flex30+' ' + styles.rightBorder}>
+                    <div className={styles.flexOne+' ' + styles.rightBorder}>
                         <p className={styles.contentCellTitle}>店铺列表：</p>
                         <Shops shopList={shopList} />
                    </div>
-                   <div className={styles.flex70+' ' + styles.leftBorder}>
+                   <div className={styles.flexTwo+' ' + styles.leftBorder}>
                         <p className={styles.contentCellTitle}>交易报表：</p>
                         <Chart />
                    </div>
