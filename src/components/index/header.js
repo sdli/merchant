@@ -8,7 +8,6 @@ const list = {
 };
 
 const header = function({selected}){
-    console.log(selected);
     return(
         <div className={styles.headerMenu}>
             <ul className={styles.headerUl}>

@@ -1,4 +1,4 @@
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox, Alert } from 'antd';
 import styles from './loginForm.css';
 
 const FormItem = Form.Item;
@@ -8,22 +8,25 @@ class NormalLoginForm extends React.Component {
         super(props);
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-        if (!err) {
-            console.log('Received values of form: ', values);
+    submit = (dispatchFunc) => {
+        return (e)=>{
+            e.preventDefault();
+            this.props.form.validateFields((err, values) => {
+            if (!err) {
+                    dispatchFunc(values);         
+                }
+            });
         }
-        });
     }
 
     render() {
         const { getFieldDecorator } = this.props.form;
+        const {handleSubmit,alert,dispatch} = this.props;
         return (
             <div>
                 <h1 className={styles.center}>云东家商户中心</h1>
                 <div className={styles.loginPosition}>
-                    <Form onSubmit={this.handleSubmit} className={styles.loginForm}>
+                    <Form onSubmit={this.submit(handleSubmit)} className={styles.loginForm}>
                         <FormItem>
                             {getFieldDecorator('username', {
                                 rules: [{ required: true, message: '请输入用户名!' }],
@@ -52,12 +55,22 @@ class NormalLoginForm extends React.Component {
                         （没有账户）： <a href="">购买云东家收银机!</a>
                         </FormItem>
                     </Form>
+                    <Alert message="用户名或密码不正确" type="error" showIcon style={{display:alert}} />
                 </div>
             </div>
         );
     }
 }
 
-const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
+const WrappedNormalLoginForm = Form.create({
+    
+    //如果用户开始修改登录信息，则删除提示。
+    onFieldsChange: (props,field)=>{
+        if(props.alert === "block"){
+            props.dispatch({type:"loginForm/loginWaiting"});
+        }
+    }
+
+})(NormalLoginForm);
 
 export default WrappedNormalLoginForm;

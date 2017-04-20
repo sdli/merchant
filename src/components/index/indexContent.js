@@ -119,7 +119,7 @@ const Content = function(){
                         <p className={styles.contentCellTitle}>店铺列表：</p>
                         <Shops shopList={shopList} />
                    </div>
-                   <div className={styles.flexTwo+' ' + styles.leftBorder}>
+                   <div className={styles.flexThree+' ' + styles.leftBorder}>
                         <p className={styles.contentCellTitle}>交易报表：</p>
                         <Chart />
                    </div>
@@ -151,7 +151,7 @@ const Content = function(){
                         </div>
                     </Carousel>
                 </div>
-                <div className={styles.imageGroup}>
+                <div className={styles.newsGroup}>
                     <p className={styles.contentCellTitle}>消息资讯：</p>
                     <ul className={styles.newsList}>
                         <li><span>[新]</span>云东家发布新款设备</li>

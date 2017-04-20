@@ -1,17 +1,24 @@
 {
   "entry": "src/index.js",
+  "disableCSSModules": false,
+  "publicPath": "/",
+  "autoprefixer": null,
+  "extraBabelPlugins": [
+    "transform-runtime",
+    ["import", { "libraryName": "antd", "style": true }]
+  ],
   "env": {
     "development": {
       "extraBabelPlugins": [
-        "dva-hmr",
-         "transform-runtime",
-       ["import", { "libraryName": "antd", "style": "css" }]
+        "dva-hmr"
       ]
-    },
-    "production": {
-      "extraBabelPlugins": [
-        "transform-runtime"
-      ]
+    }
+  },
+ "proxy": {
+    "/api": {
+      "target": "http://localhost:3060/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
     }
   }
 }

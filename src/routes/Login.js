@@ -3,16 +3,16 @@ import {connect} from "dva";
 import LoginForm from "../components/login/Login";
 import MainLayout from '../components/layout/main.layout';
 
-const LoginPage = ({dispatch,login})=>{
-    function handleSubmit(info){
-        console.log(info);
+const LoginPage = ({dispatch,loginForm})=>{
+    
+    function handleSubmit(values){
+        dispatch({type: 'loginForm/login',loginInfo:values});
     }
 
     return (
-        <MainLayout title="云东家商户后台登录" ContentComponent={<LoginForm handleSubmit={handleSubmit}  />}>
-            
+        <MainLayout title="云东家商户后台登录" ContentComponent={<LoginForm handleSubmit={handleSubmit} alert={loginForm.alert} dispatch={dispatch} />}>
         </MainLayout>
     );
 }
 
-export default connect()(LoginPage);
+export default connect(({loginForm})=>({loginForm,}))(LoginPage);

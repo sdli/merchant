@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import dva from 'dva';
 import './index.css';
 
@@ -8,17 +9,17 @@ const app = dva(
        { name: 'dva', id: 1 },
        { name: 'antd', id: 2 },
      ],
-   },
+   }
  }
 );
-
 
 // 2. Plugins
 app.use({});
 
 // 3. Model
 // app.model(require('./models/example'));
-app.model(require('./models/products'));
+app.model(require('./models/login'));
+app.model(require('./models/modal'));
 
 // 4. Router
 app.router(require('./router'));

@@ -32,12 +32,12 @@ class SimpleLineChart extends Component{
   	return (
       <div className={styles.indexChart} ref={(div)=>this.div=div}>
         <div className={styles.chartController}>
-           <Select defaultValue="姚佳便利店" style={{ width: 120 }} size="small">
+           <Select defaultValue="姚佳便利店" style={{ width: 120,marginRight: 8  }} size="small">
               <Option value="姚佳便利店">姚佳便利店</Option>
               <Option value="I DO黄金">I DO黄金</Option>
               <Option value="拉亚汉堡">拉亚汉堡</Option>
             </Select>
-            <RangePicker size="small" style={{ width: 220,marginLeft: 8 }} />
+            <RangePicker size="small" style={{ width: 220}} />
         </div>
         <LineChart width={this.state.width} height={300} data={data} ref={(chart)=>this.chart = chart}>
           <XAxis dataKey="name" padding={{left: 30, right: 30}}/>
