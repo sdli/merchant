@@ -3,7 +3,7 @@ import request from "../utils/request";
 import objToQuery from '../utils/objToQuery';
 
 const fetchData = function*(loginInfo){
-    let data = yield request('http://47.93.224.216:3060/api/login', {
+    let data = yield request('/api/login', {
       method: 'POST',
       headers: {
           "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" 
