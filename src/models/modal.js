@@ -4,7 +4,7 @@ import request from "../utils/request";
 import objToQuery from "../utils/objToQuery";
 
 const fetchData = function*(){
-    let data = yield request('/api/loadAuth', {
+    let data = yield request('http://47.93.224.216:3060/api/loadAuth', {
           method: 'POST',
           headers: {
               "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" 
