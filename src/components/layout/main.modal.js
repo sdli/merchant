@@ -1,13 +1,18 @@
 import React,{Component} from "react";
-import { Modal, Button } from 'antd';
+import { Modal, Button,message } from 'antd';
 
 class MainModal extends Component{
     constructor(props){
         super(props);
+        console.log(props);
     }
 
     componentDidMount(){
-        const dispatch = this.props.dispatch;
+        const {dispatch,loginModal} = this.props;
+        switch (loginModal){
+            case 1: message.success("登录成功！");break;
+            default: null;
+        };
         if(!this.props.status){
             Modal.warning({
                 title: '登录已过期',

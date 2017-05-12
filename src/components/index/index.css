@@ -108,6 +108,10 @@
     font-size: 24px;
     color: #108ee9;
 }
+.dataCell:hover > p:first-child{
+    background: #108ee9;
+    color: #ffffff;
+}
 .dataCell > p:last-child{
     line-height: 14px;
 }

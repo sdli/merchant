@@ -1,12 +1,11 @@
 import React from 'react';
 import {connect} from "dva";
-import LoginForm from "../components/login/Login";
 import Modal from "../components/layout/main.modal";
 
-const AuthTrace = ({loginForm,dispatch,children})=>{
+const AuthTrace = ({loginForm,dispatch,children,modalController})=>{
     return (
         <div>
-            <Modal status={loginForm.status} dispatch={dispatch}  />
+            <Modal status={loginForm.status} dispatch={dispatch} loginModal={modalController.loginModal} />
             <div>
                 {children}
             </div>
@@ -14,4 +13,4 @@ const AuthTrace = ({loginForm,dispatch,children})=>{
     );
 };
 
-export default connect(({loginForm})=>({loginForm}))(AuthTrace);
+export default connect(({loginForm,modalController})=>({loginForm,modalController}))(AuthTrace);

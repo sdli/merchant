@@ -13,6 +13,7 @@ const data = [
       {name: '会员支付', "李书东": 1890, "吴台松": 4800, "总金额": 6000},
       {name: '优惠折扣', "李书东": 2390, "吴台松": 3800, "总金额": 6300}
 ];
+const Option = Select.Option;
 
 class SimpleLineChart extends Component{
   constructor(props){

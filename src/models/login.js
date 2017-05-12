@@ -3,17 +3,15 @@ import request from "../utils/request";
 import objToQuery from '../utils/objToQuery';
 
 const fetchData = function*(loginInfo){
-    let data = yield request('http://localhost:8000/api/login', {
+    let data = yield request('/api/login', {
       method: 'POST',
       headers: {
           "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" 
       },
       body: objToQuery(loginInfo),
-      mode: 'cors'
+      credentials: 'include'
     });
 
-    console.log(objToQuery(loginInfo));
-    console.log(data);
     //成功后返回effects yield结果
     if(parseInt(data.data.code) >=1){
         localStorage.token=data.data.token;

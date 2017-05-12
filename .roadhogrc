@@ -17,7 +17,8 @@
  "proxy": {
     "/api": {
       "target": "http://localhost:3060/",
-      "changeOrigin": true,
+      "changeOrigin": false,
+      "secure": false,
       "pathRewrite": { "^/api" : "" }
     }
   }
