@@ -281,3 +281,51 @@
     float: left;
     cursor: pointer;
 }
+.cardTitle > p{
+    line-height: 24px;
+}
+.listItemUl{
+    width: 100%;
+    margin-top: 16px;
+    list-style: none;
+}
+.listItemUl>li{
+    height: 36px;
+    border-top: 1px solid #f0f0f0;
+}
+.listItemUl>li:after{
+    clear: both;
+}
+.listItemUl>li:hover{
+    background-color: #ecf6fd;
+}
+.listItemUl>li>a{
+    display: block;
+    width:100%;
+    height: 36px;
+    padding: 8px 8px 8px 50px;
+    text-decoration: none;
+    color: #4d4d4d;
+}
+.listItemUl>li > a> span{
+    width: 44px;
+    height: 20px;
+    display: block;
+    margin-left:-44px;
+    font-size: 14px;
+    float: left;
+    top:0;
+    padding: 2px 8px;
+}
+.listItemUl>li >a>span>i{
+    width: 26px;
+    height: 20px;
+    font-size: 14px;
+    display: block;
+    float: left;
+}
+.listItemUl>li > a> p{
+    line-height: 18px;
+    text-align: center;
+    float:left;
+}

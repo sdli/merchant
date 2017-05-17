@@ -5,7 +5,6 @@ const { Header, Content, Footer, Sider } = Layout;
 import styles from "./layout.css";
 import Grail from "./main.layout.grail";
 import Full from "./main.layout.full";
-import Animation from "../index/animation";
 
 
 /*
@@ -54,7 +53,6 @@ class mainLayout extends Component{
                     </div>
                         {HeaderComponent}
                 </Header>
-                <Animation />
                 <Content className={styles.content}>
                     <Layout style={{background: '#fff' }}>
                         {MenuComponent &&  <Sider width={MenuComponent?200:0} style={{ background: '#fff' }}>
