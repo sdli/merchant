@@ -12,16 +12,26 @@
     line-height: 64px;
 }
 .layout{
-    background-color: #ffffff
+    background-color: #ffffff;
+    display: block !important;
 }
 .content{
-   padding: 16px 32px;
+   padding: 16px 16px;
    background: #f0f0f0;
    overflow: hidden;
 }
-
-@media screen and (max-width: 480px){
-   .content{
-        padding: 16px 0; 
-    }
+.layout:after {
+    clear: both;
+    content: " ";
+    display: table;
+}
+.grailLeft{
+    float: left;
+    width: 100%;
+}
+.grailRight{
+    float: right;
+}
+.grailBorder{
+    border-right: 8px solid #f6f6f6;
 }

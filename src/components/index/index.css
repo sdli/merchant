@@ -68,7 +68,6 @@
 .contentRight{
     float: right;
     width: 260px;
-    min-height: 750px;
     border-left: 1px solid #f0f0f0;
 }
 .contentLeft{
@@ -78,9 +77,31 @@
     width: 100%;
     padding: 16px 16px;
 }
-.contentCellFlex{
-    display: flex;
-    padding: 16px;
+.contentBorder{
+    border-bottom: 8px solid #f6f6f6;
+}
+.contentCellShop{
+    display: block;
+    position: relative;
+    padding: 16px 16px 16px 360px;
+}
+.borderABS{
+    width: 8px;
+    position: absolute;
+    margin-left: -4px;
+    height: 100%;
+    background: #f6f6f6;
+    top:0;
+}
+.contentCellShopList{
+    width: 360px;
+    padding: 0 16px;
+    float: left;
+    margin-left: -360px;
+}
+.contentCellShopChart{
+    padding: 0 16px;
+    width: 100%;
 }
 .newsGroup{
     padding: 8px 16px;
@@ -88,7 +109,8 @@
 .contentCellTitle{
     line-height: 44px;
     font-size: 12px;
-    color: #999999;
+    font-weight: bold;
+    color: #4d4d4d;
 }
 .data{
     height: 100px;
@@ -125,7 +147,6 @@
 }
 .indexShop{
     flex: 1;
-    min-height: 500px;
 }
 .flex70{
     flex: 0 0 60%;
@@ -139,50 +160,50 @@
 .flexThree{
     flex: 3;
 }
-.leftBorder{
-    border-left: 1px solid #f0f0f0;
-    padding: 0 0 0 32px;
-}
-.rightBorder{
-    padding: 0 32px 0 0;
-}
 .shopItem{
-    display: flex;
-    padding: 8px;
+    display: block;
+    padding: 8px 90px 8px 48px;
     height: 48px;
     margin: 8px auto;
-    background: #f6f6f6;
+    background: #f0f0f0;
     border-radius: 3px;
+    cursor: pointer;
+}
+.shopItem:after{
+    clear:both;
 }
 .shopItem:hover{
     box-shadow: 0 0 4px #108ee9;
+    transform: scale(1.01);
 }
 .shopItem > img{
     width: 32px;
+    float: left;
+    margin-left: -40px;
     height: 32px;
     display: inline-flex;
     border-radius: 50%;
     border: 2px solid #108ee9;
 }
 .shopItem > p{
-    flex: 1;
+    width: 100%;
     line-height: 32px;
-    padding: 0 16px;
+    padding: 0 8px;
     font-weight: bold;
-}
-.shopItem > p >span:first-child{
-    display:block;
-    float: left;
-    max-width: 70%;
     overflow: hidden;
-    white-space : nowrap;
     text-overflow: ellipsis;
+    white-space:nowrap;
+    float: left;
+    max-width: 90%;
 }
-.shopItem > p >span:last-child{
+
+.shopItem > span{
     display: block;
+    width: 90px;
+    padding: 0 8px;
     line-height: 32px;
+    margin-right: -90px;
     float: right;
-    font-weight: lighter;
 }
 .popOver > button{
     margin: 4px 4px;
@@ -194,7 +215,6 @@
 .merchantInfo >p{
     line-height: 24px;
 }
-
 .merchantHelp > p{
     height: 44px;
     padding: 6px 16px;
@@ -219,6 +239,7 @@
     margin-right: 16px;
     float: left;
     display: block;
+    color: #108ee9;
 }
 .imageGroup{
     border-bottom: 1px solid #f0f0f0;
@@ -228,6 +249,7 @@
     width: 100%;
 }
 .imageItem > img{
+    height: 160px;
     width: 100%;
 }
 .newsList{
@@ -249,4 +271,13 @@
 .newsList > li > span{
     line-height: 24px;
     color: red;
+}
+.contentFull{
+    width: 100%;
+}
+.manageCardList > div{
+    width: 18%;
+    margin: 0 1%;
+    float: left;
+    cursor: pointer;
 }

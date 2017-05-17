@@ -10,7 +10,7 @@ const LoginPage = ({dispatch,loginForm})=>{
     }
 
     return (
-        <MainLayout title="云东家商户后台登录" ContentComponent={<LoginForm handleSubmit={handleSubmit} alert={loginForm.alert} dispatch={dispatch} />}>
+        <MainLayout title="云东家商户后台登录" contentType="full" ContentComponent={<LoginForm handleSubmit={handleSubmit} alert={loginForm.alert} dispatch={dispatch} />}>
         </MainLayout>
     );
 }

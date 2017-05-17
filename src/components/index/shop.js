@@ -24,10 +24,10 @@ const ShopItem = function({shopName,status,image}){
                 <img src={require('../../assets/'+ image+ '.png')} />
                 <p>
                     <span>{shopName}</span>
-                    <span>
-                        <Badge status="processing" />运营中
-                    </span>
                 </p>
+                <span>
+                    <Badge status="processing" />运营中
+                </span>
             </div>
         </Popover>
     );

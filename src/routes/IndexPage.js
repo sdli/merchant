@@ -4,6 +4,9 @@ import Layout from "../components/layout/main.layout";
 import HeaderComponent from "../components/index/header";
 // import MenuComponent from "../components/index/menu";
 import ContentComponent from "../components/index/indexContent";
+import RightSiderComponent from "../components/index/indexRightSider";
+
+
 function IndexPage() {
   return (
     <Layout 
@@ -11,7 +14,10 @@ function IndexPage() {
       ContentComponent={<div>首页内容</div>} 
       HeaderComponent={<HeaderComponent selected="main" />} 
       MenuComponent="" 
-      ContentComponent={<ContentComponent />}      
+      ContentComponent={<ContentComponent />}
+      RightSiderComponent={<RightSiderComponent />}
+      RightSiderWidth="240"
+      contentType="grail"
     />
   );
 }

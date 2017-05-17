@@ -24,8 +24,21 @@ class SimpleLineChart extends Component{
   }
   
   componentDidMount(){
-      this.setState({
-          width: this.div.offsetWidth-50
+      var that = this;
+
+      that.setState({
+          width: that.div.offsetWidth-50
+      });
+
+      window.addEventListener("resize",function(){
+          var docWidth = document.body.clientWidth;
+          if(Math.abs(that.state.width-docWidth)>10){
+            if(typeof that.div !== "undefined" && that.div != null){
+              that.setState({
+                width: that.div.offsetWidth-50
+              });
+            }
+          }
       });
   }
 

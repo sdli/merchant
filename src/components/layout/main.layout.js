@@ -3,6 +3,10 @@ import React, { Component } from "react";
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 import styles from "./layout.css";
+import Grail from "./main.layout.grail";
+import Full from "./main.layout.full";
+import Animation from "../index/animation";
+
 
 /*
 后台系统最主要的布局模块，所有页面均由此页面
@@ -24,13 +28,24 @@ import styles from "./layout.css";
 备注：其中R部分放置在Content模块中，可有可无，自行
 控制。
 */
+const contentInitial = (contentType,ContentComponent,RightSiderComponent,RightSiderWidth)=>{
+    switch (contentType){
+        case "full":
+            return <Full ContentComponent={ContentComponent || this.children} />;
+        case "grail":
+            return <Grail ContentComponent={ContentComponent || this.children} RightSiderComponent={RightSiderComponent} RightSiderWidth={RightSiderWidth} />;
+        default:
+            return null;
+    }
+}
+
 class mainLayout extends Component{
     constructor(props){
         super(props);
     }
 
     render(){
-        const {children,ContentComponent,MenuComponent,HeaderComponent,title} = this.props;
+        const {children,ContentComponent,MenuComponent,HeaderComponent,RightSiderComponent,title,contentType,RightSiderWidth} = this.props;
         return (
             <Layout className={styles.layout}>
                 <Header className={styles.header}>
@@ -39,13 +54,14 @@ class mainLayout extends Component{
                     </div>
                         {HeaderComponent}
                 </Header>
+                <Animation />
                 <Content className={styles.content}>
                     <Layout style={{background: '#fff' }}>
                         {MenuComponent &&  <Sider width={MenuComponent?200:0} style={{ background: '#fff' }}>
                             {MenuComponent}
                         </Sider>}
-                        <Content style={{minHeight: 360 }}>
-                            {ContentComponent || this.props.children}
+                        <Content>
+                            {contentInitial(contentType,ContentComponent,RightSiderComponent,RightSiderWidth)}
                         </Content>
                     </Layout>
                 </Content>

@@ -13,5 +13,12 @@
         "dva-hmr"
       ]
     }
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3060/",
+      "changeOrigin": false,
+      "pathRewrite": { "^/api" : "" }
+    }
   }
 }

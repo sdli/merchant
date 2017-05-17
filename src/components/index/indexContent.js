@@ -96,73 +96,35 @@ const shopList=[
 
 const Content = function(){
     return (
-       <div className={styles.indexContent}>
-           <div className={styles.contentLeft}>
-               <div className={styles.contentCell}>
-                   <p className={styles.contentCellTitle}>常用功能：</p>
-                    {buttonList.map((val)=>{
-                        for(var x in val){
-                                return (
-                                    <Buttons name={val[x].name} icon={val[x].icon} key={x} />
-                                );
-                            }
-                        })
-                    }
-                  <div style={{clear: 'both'}}></div>
-               </div>
-               <div className={styles.contentCell}>
-                   <p className={styles.contentCellTitle}>我的数据：</p>
-                   <Datas />
-               </div>
-               <div className={styles.contentCellFlex}>
-                    <div className={styles.flexOne+' ' + styles.rightBorder}>
-                        <p className={styles.contentCellTitle}>店铺列表：</p>
-                        <Shops shopList={shopList} />
-                   </div>
-                   <div className={styles.flexThree+' ' + styles.leftBorder}>
-                        <p className={styles.contentCellTitle}>交易报表：</p>
-                        <Chart />
-                   </div>
-               </div>
-           </div>
-           <div className={styles.contentRight}>
-               <div className={styles.merchantInfo}>
-                   <p>账户：1233453535</p>
-                   <p>昵称：李书东的店铺</p>
-                   <p><Button size="small">编辑资料</Button></p>
-               </div>
-               <div className={styles.merchantHelp}>
-                   <p>
-                       <Icon type="edit" />
-                       <span>客服留言</span>
-                   </p>
-                   <p>
-                       <Icon type="copy" />
-                       <span>产品使用指南</span>
-                   </p>
-               </div>
-               <div className={styles.imageGroup}>
-                      <Carousel autoplay>
-                        <div className={styles.imageItem}>
-                            <img src={require("../../assets/6.png")} />
-                        </div>
-                        <div className={styles.imageItem}>
-                            <img src={require("../../assets/6.png")} />
-                        </div>
-                    </Carousel>
+        <div className={styles.contentFull}>
+            <div className={styles.contentCell + " " + styles.contentBorder}>
+                <p className={styles.contentCellTitle}>常用功能：</p>
+                {buttonList.map((val)=>{
+                    for(var x in val){
+                            return (
+                                <Buttons name={val[x].name} icon={val[x].icon} key={x} />
+                            );
+                        }
+                    })
+                }
+                <div style={{clear: 'both'}}></div>
+            </div>
+            <div className={styles.contentCell + " " + styles.contentBorder}>
+                <p className={styles.contentCellTitle}>我的数据：</p>
+                <Datas />
+            </div>
+            <div className={styles.contentCellShop}>
+                <div className={styles.contentCellShopList}>
+                    <p className={styles.contentCellTitle}>店铺列表：</p>
+                    <Shops shopList={shopList} />
                 </div>
-                <div className={styles.newsGroup}>
-                    <p className={styles.contentCellTitle}>消息资讯：</p>
-                    <ul className={styles.newsList}>
-                        <li><span>[新]</span>云东家发布新款设备</li>
-                        <li>商户入网申请流程有变化</li>
-                        <li>云东家新增23寸副屏，更高清！</li>
-                        <li>云东家POS设备新增2款新产品</li>
-                        <li><span>[活动]</span>买配件，我买单！2017年中秋活动预告！</li>
-                    </ul>
+                <div className={styles.borderABS}></div>
+                <div className={styles.contentCellShopChart}>
+                    <p className={styles.contentCellTitle}>交易报表：</p>
+                    <Chart />
                 </div>
-           </div>
-       </div>
+            </div>
+        </div>
     );
 }
 
