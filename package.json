@@ -4,9 +4,8 @@
     "start": "npm run server",
     "server": "set PORT=3000&&roadhog server",
     "api": "node ./src/api/index.js",
-    "build": "roadhog build --debug",
-    "lint": "eslint --ext .js src test",
-    "precommit": "npm run lint"
+    "build": "roadhog build",
+    "lint": "eslint --ext .js src test"
   },
   "engines": {
     "install-node": "6.9.2"
