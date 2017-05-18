@@ -5,6 +5,7 @@ const { Header, Content, Footer, Sider } = Layout;
 import styles from "./layout.css";
 import Grail from "./main.layout.grail";
 import Full from "./main.layout.full";
+import QueueAnim from 'rc-queue-anim';
 
 
 /*
@@ -44,29 +45,38 @@ class mainLayout extends Component{
     }
 
     render(){
-        const {children,ContentComponent,MenuComponent,HeaderComponent,RightSiderComponent,title,contentType,RightSiderWidth} = this.props;
+        const {Animation,ContentComponent,MenuComponent,HeaderComponent,UserInfo,RightSiderComponent,title,contentType,RightSiderWidth} = this.props;
+        console.log(UserInfo);
         return (
             <Layout className={styles.layout}>
                 <Header className={styles.header}>
                     <div className={styles.logo}>
                         {title}
                     </div>
-                        {HeaderComponent}
+                    {HeaderComponent}
+                    {UserInfo}
                 </Header>
-                <Content className={styles.content}>
-                    <Layout style={{background: '#fff' }}>
-                        {MenuComponent &&  <Sider width={MenuComponent?200:0} style={{ background: '#fff' }}>
-                            {MenuComponent}
-                        </Sider>}
-                        <Content>
-                            {contentInitial(contentType,ContentComponent,RightSiderComponent,RightSiderWidth)}
+                <div>
+                    <QueueAnim
+                        {...Animation}
+                    >
+                        <Content className={styles.content} key="animation">
+                            <Layout style={{background: '#fff' }}>
+                                {MenuComponent &&  <Sider width={MenuComponent?240:0} style={{ background: '#fff' }}>
+                                    {MenuComponent}
+                                </Sider>}
+                                <Content>
+                                    {contentInitial(contentType,ContentComponent,RightSiderComponent,RightSiderWidth)}
+                                </Content>
+                            </Layout>
                         </Content>
-                    </Layout>
-                </Content>
-                <Footer style={{ textAlign: 'center' }}>
-                    云东家商户管理后台，ant-design<br/>
-                    版权所有 @CopyRight 2015-2017 深圳前海云东家科技有限公司
-                </Footer>
+                        <Footer style={{ textAlign: 'center' }}>
+                            云东家商户管理后台，ant-design<br/>
+                            版权所有 @CopyRight 2015-2017 深圳前海云东家科技有限公司
+                        </Footer>
+                    </QueueAnim>
+                </div>
+                
             </Layout>
         );
     }

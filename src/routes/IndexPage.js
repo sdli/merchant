@@ -2,10 +2,9 @@ import React from 'react';
 import { connect } from 'dva';
 import Layout from "../components/layout/main.layout";
 import HeaderComponent from "../components/index/header";
-// import MenuComponent from "../components/index/menu";
 import ContentComponent from "../components/index/indexContent";
 import RightSiderComponent from "../components/index/indexRightSider";
-
+import UserInfo from '../components/index/userInfo';
 
 function IndexPage() {
   return (
@@ -16,8 +15,12 @@ function IndexPage() {
       MenuComponent="" 
       ContentComponent={<ContentComponent />}
       RightSiderComponent={<RightSiderComponent />}
+      UserInfo={<UserInfo />}
       RightSiderWidth="240"
       contentType="grail"
+      animation={{
+        duration: 200
+      }}
     />
   );
 }

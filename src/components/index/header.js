@@ -16,9 +16,9 @@ const manageMenuList=[
           subtitle: "门店与职员管理",
           logo: "../../assets/management/shop.png",
           content:[
-              {name:"门店列表",href:"/management/shopList",icon:"shop"},
-              {name:"职员管理",href:"/management/shopList",icon:"idcard"},
-              {name:"设备绑定",href:"/management/shopList",icon:"android"}
+              {name:"门店列表",href:"/#/manage/shopList",icon:"shop"},
+              {name:"职员管理",href:"/#/manage/shopList",icon:"idcard"},
+              {name:"设备绑定",href:"/#/manage/shopList",icon:"android"}
           ]
       },
       {
@@ -26,11 +26,11 @@ const manageMenuList=[
           subtitle: "库存、条码与出入库管理",
           logo: "../../assets/management/product.png",
           content:[
-              {name:"商品入库",href:"/management/product",icon:"folder-add"},
-              {name:"库存记录",href:"/management/product",icon:"file-excel"},
-              {name:"商品出库",href:"/management/product",icon:"export"},
-              {name:"条码管理",href:"/management/product",icon:"barcode"},
-              {name:"商品单位管理",href:"/management/product",icon:"bank"}
+              {name:"商品入库",href:"/#/manage/product",icon:"folder-add"},
+              {name:"库存记录",href:"/#/manage/product",icon:"file-excel"},
+              {name:"商品出库",href:"/#/manage/product",icon:"export"},
+              {name:"条码管理",href:"/#/manage/product",icon:"barcode"},
+              {name:"商品单位管理",href:"/#/manage/product",icon:"bank"}
           ]
       },
       {
@@ -38,9 +38,9 @@ const manageMenuList=[
           subtitle: "银行卡、支付宝、微信支付申请",
           logo: "../../assets/management/pay.png",
           content:[
-              {name:"门店列表",href:"/management/pay",icon:"shop"},
-              {name:"支付申请",href:"/management/pay",icon:"pay-circle"},
-              {name:"申请记录",href:"/management/pay",icon:"hourglass"}
+              {name:"门店列表",href:"/#/manage/pay",icon:"shop"},
+              {name:"支付申请",href:"/#/manage/pay",icon:"pay-circle"},
+              {name:"申请记录",href:"/manage/pay",icon:"hourglass"}
           ]
       },
       {
@@ -48,11 +48,11 @@ const manageMenuList=[
           subtitle: "盈利、销售、库存报表",
           logo: "../../assets/management/statistic.png",
           content:[
-              {name:"盈利报表",href:"/management/pay",icon:"pie-chart"},
-              {name:"销售排行",href:"/management/pay",icon:"bar-chart"},
-              {name:"营业数据",href:"/management/pay",icon:"area-chart"},
-              {name:"库存报表",href:"/management/pay",icon:"line-chart"},
-              {name:"会员报表",href:"/management/pay",icon:"dot-chart"}
+              {name:"盈利报表",href:"/#/manage/pay",icon:"pie-chart"},
+              {name:"销售排行",href:"/#/manage/pay",icon:"bar-chart"},
+              {name:"营业数据",href:"/#/manage/pay",icon:"area-chart"},
+              {name:"库存报表",href:"/#/manage/pay",icon:"line-chart"},
+              {name:"会员报表",href:"/#/manage/pay",icon:"dot-chart"}
           ]
       },
       {
@@ -60,9 +60,9 @@ const manageMenuList=[
           subtitle: "会员信息查看和编辑",
           logo: "../../assets/management/member.png",
           content:[
-              {name:"会员列表",href:"/management/pay",icon:"star-o"},
-              {name:"会员积分",href:"/management/pay",icon:"coffee"},
-              {name:"等级设置",href:"/management/pay",icon:"wallet"}
+              {name:"会员列表",href:"/#/manage/pay",icon:"star-o"},
+              {name:"会员积分",href:"/#/manage/pay",icon:"coffee"},
+              {name:"等级设置",href:"/#/manage/pay",icon:"wallet"}
           ]
       }
       ];
@@ -70,9 +70,9 @@ const manageMenuList=[
 const CardListItem= function({arr}){
     return(
         <ul className={styles.listItemUl}>
-            {arr.map((val)=>{
+            {arr.map((val,index)=>{
                 return(
-                    <li>
+                    <li key={index}>
                         <a href={val.href}>
                             <span>
                                 <Icon type={val.icon?val.icon:"link"} />
@@ -90,18 +90,7 @@ const ManagementMenu = function({handleLeave,status}){
     return (
             <div 
                 onMouseLeave={handleLeave}
-                style={{
-                    position: 'fixed',
-                    top:64,
-                    left:0,
-                    width:"100%",
-                    padding: "32px 10%",
-                    backgroundColor:'#ffffff',
-                    borderBottom:"1px solid #f0f0f0",
-                    zIndex:"9000",
-                    boxShadow:"0 6px 6px #e3e3e3",
-                    minWidth: 1024
-                }}
+                className={styles.manageDropDownMenu}
             >
                     <QueueAnim  
                         delay={50} 
@@ -111,11 +100,11 @@ const ManagementMenu = function({handleLeave,status}){
                     >
                         <div key="card1">
                             <Card bodyStyle={{padding:0}}>
-                                <div>
-                                    <img alt={manageMenuList[0].name+"图片"} width="100%" src={require("../../assets/management/shop.png")} />
+                                <div className={styles.cardImage}>
+                                    <img alt={manageMenuList[0].name+"图片"} src={require("../../assets/management/shop.png")} />
+                                    <p className={styles.cardTag}>{manageMenuList[0].name}</p>
                                 </div>
-                                <div style={{textAlign: "center"}} className={styles.cardTitle}>
-                                    <p><strong>{manageMenuList[0].name}</strong></p>
+                                <div className={styles.cardTitle}>
                                     <p>{manageMenuList[0].subtitle}</p>
                                     <CardListItem  arr={manageMenuList[0].content} />
                                 </div>
@@ -123,23 +112,23 @@ const ManagementMenu = function({handleLeave,status}){
                         </div>
                         <div key="card2">
                             <Card bodyStyle={{padding:0}}>
-                                <div>
-                                    <img alt={manageMenuList[1].name+"图片"} width="100%" src={require("../../assets/management/product.png")} />
+                                <div className={styles.cardImage}>
+                                    <img alt={manageMenuList[1].name+"图片"} src={require("../../assets/management/product.png")} />
+                                    <p  className={styles.cardTag}>{manageMenuList[1].name}</p>
                                 </div>
                                 <div style={{textAlign: "center"}} className={styles.cardTitle}>
-                                    <p><strong>{manageMenuList[1].name}</strong></p>
                                     <p>{manageMenuList[1].subtitle}</p>
                                     <CardListItem  arr={manageMenuList[1].content} />
                                 </div>
-                            </Card>  
+                            </Card>
                         </div>
                         <div key="card3">
                             <Card bodyStyle={{padding:0}}>
-                                <div>
-                                    <img alt={manageMenuList[2].name+"图片"} width="100%" src={require("../../assets/management/pay.png")} />
+                                <div className={styles.cardImage}>
+                                    <img alt={manageMenuList[2].name+"图片"} src={require("../../assets/management/pay.png")} />
+                                    <p className={styles.cardTag}>{manageMenuList[2].name}</p>
                                 </div>
                                 <div style={{textAlign: "center"}} className={styles.cardTitle}>
-                                    <p><strong>{manageMenuList[2].name}</strong></p>
                                     <p>{manageMenuList[2].subtitle}</p>
                                     <CardListItem  arr={manageMenuList[2].content} />
                                </div>
@@ -147,11 +136,11 @@ const ManagementMenu = function({handleLeave,status}){
                         </div>
                         <div key="card4">
                             <Card bodyStyle={{padding:0}}>
-                                <div>
-                                    <img alt={manageMenuList[3].name+"图片"} width="100%" src={require("../../assets/management/statistic.png")} />
+                                <div className={styles.cardImage}>
+                                    <img alt={manageMenuList[3].name+"图片"} src={require("../../assets/management/statistic.png")} />
+                                    <p className={styles.cardTag}>{manageMenuList[3].name}</p>
                                 </div>
                                 <div style={{textAlign: "center"}} className={styles.cardTitle}>
-                                    <p><strong>{manageMenuList[3].name}</strong></p>
                                     <p>{manageMenuList[3].subtitle}</p>
                                     <CardListItem  arr={manageMenuList[3].content} />
                                 </div>
@@ -159,11 +148,11 @@ const ManagementMenu = function({handleLeave,status}){
                         </div>
                         <div key="card5">
                             <Card bodyStyle={{padding:0}}>
-                                <div>
-                                    <img alt={manageMenuList[4].name+"图片"} width="100%" src={require("../../assets/management/member.png")} />
+                                <div className={styles.cardImage}>
+                                    <img alt={manageMenuList[4].name+"图片"} src={require("../../assets/management/member.png")} />
+                                    <p className={styles.cardTag}>{manageMenuList[4].name}</p>
                                 </div>
                                 <div style={{textAlign: "center"}} className={styles.cardTitle}>
-                                    <p><strong>{manageMenuList[4].name}</strong></p>
                                     <p>{manageMenuList[4].subtitle}</p>
                                     <CardListItem  arr={manageMenuList[4].content} />
                                 </div>
@@ -201,10 +190,12 @@ class Header extends Component{
         return(
             <div className={styles.headerMenu}>
                 <ul className={styles.headerUl}>
-                    <li className={selected=='main'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p>首页</p></li>
-                    <li className={selected=='manage'?styles.headerMenuActive:''} onMouseEnter={this.handleHover}><p>管理中心</p></li>
-                    <li className={selected=='support'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p>技术支持</p></li>
-                    <li className={selected=='message'?styles.headerMenuActive:''}><p>消息中心</p></li>
+                    <li className={selected=='main'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/">首页</a></p></li>
+                    <li className={selected=='manage'?styles.headerMenuActive:''} onMouseEnter={this.handleHover}><p><a href="/#/manage">管理中心</a></p></li>
+                    <li className={selected=='promotion'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p href="/#/promotion"><a>运营推广</a></p></li>
+                    <li className={selected=='support'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/#/support">技术支持</a></p></li>
+                    <li className={selected=='message'?styles.headerMenuActive:''}><p><a href="/#/message">通知中心</a></p></li>
+                    <div style={{clear:'both'}}></div>
                 </ul>
                 {this.state.management?<ManagementMenu animation={this.animation} handleLeave={this.handleLeave} status={this.state.management} />:null}
             </div>
