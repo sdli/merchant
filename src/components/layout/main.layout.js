@@ -61,11 +61,11 @@ class mainLayout extends Component{
                         {...Animation}
                     >
                         <Content className={styles.content} key="animation">
-                            <Layout style={{background: '#fff' }}>
-                                {MenuComponent &&  <Sider width={MenuComponent?240:0} style={{ background: '#fff' }}>
+                            <Layout style={{background: '#fff',paddingLeft:MenuComponent?240:0 }}>
+                                {MenuComponent &&  <Sider width={MenuComponent?240:0} style={{ marginLeft:MenuComponent?("-240px"):null,background: '#fff',float:"left"}}>
                                     {MenuComponent}
                                 </Sider>}
-                                <Content>
+                                <Content style={{width:"100%",float:"left"}}>
                                     {contentInitial(contentType,ContentComponent,RightSiderComponent,RightSiderWidth)}
                                 </Content>
                             </Layout>

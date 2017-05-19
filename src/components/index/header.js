@@ -192,7 +192,7 @@ class Header extends Component{
                 <ul className={styles.headerUl}>
                     <li className={selected=='main'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/">首页</a></p></li>
                     <li className={selected=='manage'?styles.headerMenuActive:''} onMouseEnter={this.handleHover}><p><a href="/#/manage">管理中心</a></p></li>
-                    <li className={selected=='promotion'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p href="/#/promotion"><a>运营推广</a></p></li>
+                    <li className={selected=='promotion'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/#/promotion">运营推广</a></p></li>
                     <li className={selected=='support'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/#/support">技术支持</a></p></li>
                     <li className={selected=='message'?styles.headerMenuActive:''}><p><a href="/#/message">通知中心</a></p></li>
                     <div style={{clear:'both'}}></div>

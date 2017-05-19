@@ -1,0 +1,80 @@
+.certain-category-search.ant-select-auto-complete .ant-input-affix-wrapper .ant-input-suffix {
+  right: 12px;
+}
+
+.certainCategorySearchDropdown .ant-select-dropdown-menu-item-group-title {
+  color: #666;
+  font-weight: bold;
+}
+
+.certainCategorySearchDropdown .ant-select-dropdown-menu-item-group {
+  border-bottom: 1px solid #F6F6F6;
+}
+
+.certainCategorySearchDropdown .ant-select-dropdown-menu-item {
+  padding-left: 16px;
+}
+
+.certainCategorySearchDropdown .ant-select-dropdown-menu-item.show-all {
+  text-align: center;
+  cursor: default;
+}
+
+.certainCategorySearchDropdown .ant-select-dropdown-menu {
+  max-height: 300px;
+}
+
+.certainSearchItemCount {
+ position: absolute;
+ color: #999;
+ right: 16px;
+}
+
+.certainCategorySearch.ant-select-focused .certain-category-icon {
+  color: #108ee9;
+}
+
+.certainCategoryIcon {
+  color: #6E6E6E;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  font-size: 16px;
+}
+.faqDiv{
+    width: 1120px;
+    margin: 48px auto;
+}
+.faqGroup>div{
+    width: 33.3%;
+    float: left;
+    padding: 8px;
+}
+.faqGroup>div>ul{
+    width: 100%;
+    list-style: none;
+}
+.faqGroup>div>ul>li{
+    height: 32px;
+    padding: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #4d4d4d;
+    font-size: 14px;
+}
+.findMore{
+    width: 80%;
+    margin: 16px auto;
+    height: 90px;
+    padding: 16px 0;
+    text-align: center;
+    color: #ffffff;
+}
+.findMore>p:first-child{
+    line-height: 32px;
+    font-weight: 500;
+    font-size: 18px; 
+}
+.findMore>p:last-child{
+    line-height: 16px;
+    font-size: 14px; 
+}

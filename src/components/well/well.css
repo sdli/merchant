@@ -16,3 +16,59 @@
     height: 24px;
     text-align: right;
 }
+.slickSlide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  color: #fff;
+  overflow: hidden;
+}
+.promotionCard{
+    width: 180px;
+    margin: 0 16px;
+    padding: 16px 0;
+    float: left;
+}
+.promotionCard > p{
+    line-height: 44px;
+    text-align: center;
+    color: #4d4d4d;
+}
+.cardHead{
+    height: 44px;
+    padding: 8px 8px 8px 44px;
+    border-radius: 4px;
+}
+.cardHead > i{
+    width: 28px;
+    margin-left: -40px;
+    float: left;
+    color: #ffffff;
+    line-height: 28px;
+    font-size: 18px;
+}
+.cardHead > p{
+    width: 100%;
+    line-height: 28px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    padding:0 8px;
+}
+.cardGroup{
+    padding: 16px; 
+    border-top: 8px solid #f6f6f6;
+}
+.cardGroup >p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4d4d4d;
+}
+.cardGroup:after{
+    clear:both;
+}
+.cardButton{
+    text-align: center;
+}
+
