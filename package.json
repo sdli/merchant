@@ -4,7 +4,7 @@
     "start": "npm run server",
     "server": "set PORT=3000&&roadhog server",
     "api": "node ./src/api/index.js",
-    "build": "roadhog build --debug",
+    "build": "roadhog build",
     "lint": "eslint --ext .js src test",
     "precommit": "npm run lint"
   },
