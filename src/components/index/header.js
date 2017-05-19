@@ -190,7 +190,7 @@ class Header extends Component{
         return(
             <div className={styles.headerMenu}>
                 <ul className={styles.headerUl}>
-                    <li className={selected=='main'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/">首页</a></p></li>
+                    <li className={selected=='main'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/#/">首页</a></p></li>
                     <li className={selected=='manage'?styles.headerMenuActive:''} onMouseEnter={this.handleHover}><p><a href="/#/manage">管理中心</a></p></li>
                     <li className={selected=='promotion'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/#/promotion">运营推广</a></p></li>
                     <li className={selected=='support'?styles.headerMenuActive:''} onMouseEnter={this.handleLeave}><p><a href="/#/support">技术支持</a></p></li>
